@@ -1,0 +1,311 @@
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  margin-bottom: 0.2em;
+}
+header {
+  padding: 0 15px 0 0;
+}
+header ul {
+  margin: 0 0 0 40px;
+  padding: 0;
+}
+header ul a {
+  color: white;
+}
+header li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 10px 12px 10px;
+}
+header li.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+header li.active a {
+  cursor: default;
+  text-decoration: none;
+  border: none;
+}
+header .me {
+  padding: 8px 1em;
+  coor: black;
+}
+hgroup {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.-nopaddings hgroup {
+  padding: 2em;
+}
+hgroup button {
+  position: absolute;
+  left: 300px;
+  top: 36px;
+}
+main {
+  max-width: 60em;
+  min-height: 40em;
+  margin: 3em auto;
+}
+/* Angular styles */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+[ng-click] {
+  cursor: pointer;
+}
+.ng-invalid.ng-touched {
+  border-color: #cc0000;
+  border-width: 1px;
+}
+.addform {
+  border: solid 5px gold;
+  padding: 1em 2em;
+}
+/* TODO: Move to SEGA2*/
+header {
+  width: inherit;
+}
+.hidden,
+input[type="submit"].hidden {
+  display: none;
+}
+.-relative {
+  position: relative;
+}
+.-absolute {
+  position: absolute;
+}
+hr {
+  height: 1px;
+  border: none;
+  margin: 1em 0;
+  border-top: solid #ccc 1px;
+  background: none;
+}
+.-pull-right {
+  float: right;
+}
+.-pull-left {
+  float: left;
+}
+.-m-right {
+  margin-right: 1em;
+}
+.-m-left {
+  margin-left: 1em;
+}
+.-m-top {
+  margin-top: 1em;
+}
+.-m-bottom {
+  margin-bottom: 1em;
+}
+.-m2-right {
+  margin-right: 2em;
+}
+.-m2-left {
+  margin-left: 2em;
+}
+.-m2-top {
+  margin-top: 2em;
+}
+.-m2-bottom {
+  margin-bottom: 2em;
+}
+.-disabled {
+  pointer-events: none;
+}
+.columns2 .column {
+  float: left;
+  width: 40%;
+  margin-right: 3em;
+}
+.columns3 .column {
+  float: left;
+  width: 30%;
+  margin-right: 3em;
+}
+.panel {
+  padding: 1em;
+  background: #f6f8e9;
+  border: solid 1px #e3e8c5;
+  border-radius: 2px;
+  color: black;
+}
+.-panel-white {
+  background: white;
+  border: solid 1px #d0d0d0;
+  color: black;
+}
+textarea {
+  border-color: #999;
+}
+
+
+.messageBox {
+  position: fixed;
+  z-index: 40;
+  width: 400px;
+  right: 30px;
+  top: 50px;
+  padding: 15px 30px 15px 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  background: white;
+}
+.messageBox.error {
+  color: #cc0000;
+}
+.messageBox .close {
+  float: right;
+  margin-right: -15px;
+}
+
+
+/* Shake animation */
+/* TODO: prefixes */
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+  }
+  20% {
+    -webkit-transform: translateX(-3px);
+  }
+  40% {
+    -webkit-transform: translateX(4px);
+  }
+  60% {
+    -webkit-transform: translateX(-3px);
+  }
+  80% {
+    -webkit-transform: translateX(3px);
+  }
+}
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+  }
+  20% {
+    -webkit-transform: translateX(-3px);
+  }
+  40% {
+    -webkit-transform: translateX(4px);
+  }
+  60% {
+    -webkit-transform: translateX(-3px);
+  }
+  80% {
+    -webkit-transform: translateX(3px);
+  }
+}
+.shake {
+  animation: shake 300ms;
+  -webkit-animation: shake 300ms;
+}
+.shake-add-active {
+  animation: shake 300ms;
+  -webkit-animation: shake 300ms;
+}
+/*
+
+
+.shake-add, .shake-remove {
+  animation: none;
+  -webkit-animation: none;
+}
+
+
+.shake-add-active {
+ animation: shake 300ms;
+  -webkit-animation: shake 300ms;
+}
+*/
+
+
+.dev .method {
+  margin-bottom: 1em;
+}
+.dev .form {
+  margin: 0.5em 0 0 0;
+}
+.dev .form textarea {
+  margin-bottom: 0.5em;
+  width: 100%;
+  border-color: lavender;
+}
+.dev pre {
+  margin: 0;
+}
+.dev .json {
+  padding: 1em;
+  background: #ffffdd;
+  font-size: 80%;
+}
+.dev .params {
+  margin-top: 0.5em;
+}
+.dev .no-top-padding {
+  padding-top: 0;
+}
+.dev .elapsed {
+  margin-left: 1em;
+  color: #777;
+  font-size: 80%;
+}
+.dev .result .json {
+  background: #dcf6ff;
+  border: solid 1px #bde0ec;
+  margin-top: 0.5em;
+}
+.dev .error .json {
+  background: #fff2f2;
+  border: solid 1px #f8d1d1;
+  margin-top: 0.5em;
+  color: #cc0000;
+}
+.dev .allErrors {
+  color: #cc0000;
+}
+.dev h1 {
+  margin: 1em 0 0.5em 0;
+  font-size: 150%;
+}
+.dev textarea.jsonerror {
+  border-color: red;
+}
+
+
+.login .panel {
+  position: absolute;
+  right: 1.8em;
+  width: 300px;
+  z-index: 50;
+}
+
+
+.users ul {
+  margin: 1em 0 0 0;
+  padding: 0;
+}
+.users li {
+  margin-bottom: 0.6em;
+  list-style-type: none;
+}
+.users select.role {
+  width: 180px;
+}
+
+
+/*# sourceMappingURL=all.css.map */
