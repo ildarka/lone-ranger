@@ -8,6 +8,7 @@
     "express": "^4.13.3",
     "express-http-proxy": "^0.6.0",
     "gulp": "^3.9.0",
+    "request": "^2.65.0",
     "yargs": "^3.25.0"
   },
   "devDependencies": {
@@ -28,7 +29,7 @@
     "url": ""
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "npm i -g bower && npm i -g gulp && bower install",
     "test": "gulp test --test"
   },
   "author": "Signaltech",

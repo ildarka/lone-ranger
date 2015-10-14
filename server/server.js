@@ -21,17 +21,28 @@ app.listen(config.port, function() {
   console.log('Http server started on ', config.port);
 });
 
-// Static folders
-app.use(express.static(public));
-
 /*
   Put your code here -----------------------------------
 */
-
-var prURL = 'http://localhost:8000';
+/*
+// Proxy to :8000
+var prURL = 'localhost:8000/api';
 app.use('/api', proxy(prURL, {
   forwardPath: function(req, res) {
     console.log('proxy to ' + prURL);
     return require('url').parse(req.url).path;
   }
 }));
+*/
+
+var request = require('request');
+app.use('/api', function(req,res) {
+  var newurl = 'http://localhost:8000/api';
+  console.log('proxy to ' + newurl);
+  request(newurl).pipe(res);
+});
+
+
+// Static folders
+app.use(express.static(public));
+

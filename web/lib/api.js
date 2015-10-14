@@ -126,6 +126,9 @@ app.factory('api', function($rootScope, $localStorage, $http) {
           console.log('→', JSON.stringify(c));
           
           $http.post(connectStr, JSON.stringify(c)).then(function(data) {
+            
+            console.log('← DATA FROM SERVER', data);
+            
             var data = jsonrpc.parse(data);
             console.log('←', JSON.stringify(data));
             if (typeof data.id != 'undefined' && typeof cbks[data.id] === 'function') {

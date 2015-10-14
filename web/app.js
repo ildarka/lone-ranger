@@ -48,7 +48,7 @@ app.controller("appCtrl", function($rootScope, $window, $location, $filter, $htt
   });
   
   // Init
-  $rootScope.api = api('http://localhost:3000/api');
+  $rootScope.api = api('/api');
   $rootScope.config = config;
   $rootScope.findRoute();
 });

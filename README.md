@@ -7,6 +7,12 @@
 git clone https://github.com/ildarka/lone-ranger.git
 ```
 
+Установи глобальные модули
+```bash
+npm install -g bower
+npm install -g gulp
+```
+
 Установи зависимости
 ```bash
 npm install
