@@ -5,6 +5,7 @@
   "main": "server/server.js",
   "dependencies": {
     "ajv": "^1.4.3",
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "express-http-proxy": "^0.6.0",
     "gulp": "^3.9.0",

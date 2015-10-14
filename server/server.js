@@ -36,11 +36,18 @@ app.use('/api', proxy(prURL, {
 */
 
 var request = require('request');
+var newurl = 'http://localhost:8000/api';
+
 app.use('/api', function(req,res) {
-  var newurl = 'http://localhost:8000/api';
   console.log('proxy to ' + newurl);
-  request(newurl).pipe(res);
+  req.pipe(request(newurl)).pipe(res);
 });
+
+
+//var bodyParser = require('body-parser');
+//app.use( bodyParser.json() ); 
+//app.use( bodyParser.urlencoded());
+
 
 
 // Static folders
