@@ -30,9 +30,15 @@ license:
   mirror: boolean
 
 methods:
-  get:
-    access: $ref roles/read
-
+  GetNetworkInterfaces:
+    response:
+      ip: string
+      mac: string
+      mask: string
+      name: string
+      link: string
+      up: string
+      
   add:
     params: 
       sn:

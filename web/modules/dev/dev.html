@@ -17,7 +17,7 @@
       
           <div class="method clearfix" ng-init="initMethod(model,method,vmethod)">
             <div>
-              <a class="pseudo-link" ng-click="vmethod.expand = !vmethod.expand">Custom method</a>
+              Custom method
             </div>
             
             <div class="form" ng-show="forms">
@@ -72,10 +72,10 @@
               
 
             <div class="params" ng-show="params">
-              <pre class="request json" ng-if="vmethod.params">Request:
+              <pre class="request json" ng-if="vmethod.params">Request prototype:
 {{vmethod.params | JSON}}
               </pre>
-              <pre class="request json" ng-if="vmethod.response" ng-class="{'no-top-padding': vmethod.params}">Response:
+              <pre class="request json" ng-if="vmethod.response" ng-class="{'no-top-padding': vmethod.params}">Response prototype:
 {{vmethod.response | JSON}}
               </pre>
 

@@ -92,7 +92,7 @@ module.run(['$templateCache', function($templateCache) {
     '      \n' +
     '          <div class="method clearfix" ng-init="initMethod(model,method,vmethod)">\n' +
     '            <div>\n' +
-    '              <a class="pseudo-link" ng-click="vmethod.expand = !vmethod.expand">Custom method</a>\n' +
+    '              Custom method\n' +
     '            </div>\n' +
     '            \n' +
     '            <div class="form" ng-show="forms">\n' +
@@ -147,10 +147,10 @@ module.run(['$templateCache', function($templateCache) {
     '              \n' +
     '\n' +
     '            <div class="params" ng-show="params">\n' +
-    '              <pre class="request json" ng-if="vmethod.params">Request:\n' +
+    '              <pre class="request json" ng-if="vmethod.params">Request prototype:\n' +
     '{{vmethod.params | JSON}}\n' +
     '              </pre>\n' +
-    '              <pre class="request json" ng-if="vmethod.response" ng-class="{\'no-top-padding\': vmethod.params}">Response:\n' +
+    '              <pre class="request json" ng-if="vmethod.response" ng-class="{\'no-top-padding\': vmethod.params}">Response prototype:\n' +
     '{{vmethod.response | JSON}}\n' +
     '              </pre>\n' +
     '\n' +

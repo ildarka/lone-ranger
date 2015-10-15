@@ -26,7 +26,7 @@
               vmethod._elapsed = elapsed;
               vmethod._inprogress = false;
               
-              vmethod._result = (err && typeof result === 'object') ? JSON.stringify(result, null, 4) : result;
+              vmethod._result = (result && typeof result === 'object') ? JSON.stringify(result, null, 4) : result;
               vmethod._error = (err && typeof err === 'object') ? JSON.stringify(err, null, 4) : err;
               
               if (typeof cbk == 'function') cbk(err, result);

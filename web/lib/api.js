@@ -71,6 +71,8 @@ app.factory('api', function($rootScope, $localStorage, $http) {
           } catch(e) {
             console.error(e);
           }
+        } else {
+          o = data;
         }
 
         if (o.error) {
@@ -125,12 +127,14 @@ app.factory('api', function($rootScope, $localStorage, $http) {
           
           console.log('→', JSON.stringify(c));
           
-          $http.post(connectStr, JSON.stringify(c)).then(function(data) {
-            
-            console.log('← DATA FROM SERVER', data);
+          $http.post(connectStr, JSON.stringify(c)).then(function(response) {
+            var data = response.data;
+            //console.log('← DATA FROM SERVER', response, data);
             
             var data = jsonrpc.parse(data);
-            console.log('←', JSON.stringify(data));
+            
+            console.log('←', data);
+            
             if (typeof data.id != 'undefined' && typeof cbks[data.id] === 'function') {
               $rootScope.safeApply(function() {
 

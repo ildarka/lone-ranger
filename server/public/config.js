@@ -63,8 +63,15 @@ var config = {
                 "mirror": "boolean"
             },
             "methods": {
-                "get": {
-                    "access": "superadmin aggregators.admin aggregators.user"
+                "GetNetworkInterfaces": {
+                    "response": {
+                        "ip": "string",
+                        "mac": "string",
+                        "mask": "string",
+                        "name": "string",
+                        "link": "string",
+                        "up": "string"
+                    }
                 },
                 "add": {
                     "params": {
