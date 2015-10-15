@@ -34,33 +34,37 @@ var config = {
     },
     "api": {
         "ranger": {
-            "description": "Aggregators",
-            "roles": {
-                "read": "superadmin aggregators.admin aggregators.user",
-                "write": "superadmin aggregators.admin"
+            "description": "Ranger API",
+            "Channel": {
+                "id": "string",
+                "pid": "string",
+                "lid": "string",
+                "mode": "string",
+                "on": "string",
+                "output_format": "string",
+                "tx_addr": "string",
+                "tx_port": "string",
+                "recv_port": "string",
+                "out_ip": "string",
+                "out_mask": "string"
             },
-            "model": {
-                "id": {
-                    "type": "number",
-                    "minLength": 1
-                },
-                "date": "date",
-                "sn": "string",
-                "description": "string",
-                "license": "array"
+            "ChannelStats": {
+                "sync": "string",
+                "recv_frames": "string",
+                "recv_bytes": "string",
+                "outp_packets": "string",
+                "outp_bytes": "string",
+                "proto_errors": "string",
+                "outp_errors": "string",
+                "sync_errors": "string"
             },
-            "license": {
-                "id": {
-                    "type": "number",
-                    "minLength": 1
-                },
-                "ports": {
-                    "type": "number",
-                    "minimum": 1,
-                    "maximum": 64
-                },
-                "mpls": "boolean",
-                "mirror": "boolean"
+            "NetworkInterface": {
+                "ip": "string",
+                "mac": "string",
+                "mask": "string",
+                "name": "string",
+                "link": "string",
+                "up": "string"
             },
             "methods": {
                 "GetNetworkInterfaces": {
@@ -73,132 +77,141 @@ var config = {
                         "up": "string"
                     }
                 },
-                "add": {
+                "GET_CONFIG": {
+                    "params": null,
+                    "response": {
+                        "id": "string",
+                        "pid": "string",
+                        "lid": "string",
+                        "mode": "string",
+                        "on": "string",
+                        "output_format": "string",
+                        "tx_addr": "string",
+                        "tx_port": "string",
+                        "recv_port": "string",
+                        "out_ip": "string",
+                        "out_mask": "string"
+                    }
+                },
+                "GET_STATS": {
+                    "params": null,
+                    "response": {
+                        "sync": "string",
+                        "recv_frames": "string",
+                        "recv_bytes": "string",
+                        "outp_packets": "string",
+                        "outp_bytes": "string",
+                        "proto_errors": "string",
+                        "outp_errors": "string",
+                        "sync_errors": "string"
+                    }
+                },
+                "RESET_STATS": {
+                    "params": null
+                },
+                "MODIFY_CHANNEL": {
                     "params": {
-                        "sn": {
-                            "type": "string",
-                            "minLength": 1
-                        },
-                        "description": "string"
+                        "id": "string",
+                        "pid": "string",
+                        "lid": "string",
+                        "mode": "string",
+                        "on": "string",
+                        "output_format": "string",
+                        "tx_addr": "string",
+                        "tx_port": "string",
+                        "recv_port": "string",
+                        "out_ip": "string",
+                        "out_mask": "string"
                     },
-                    "access": "superadmin aggregators.admin",
                     "jsonschema": {
                         "type": "object",
                         "properties": {
-                            "sn": {
-                                "type": "string",
-                                "minLength": 1
+                            "id": {
+                                "type": "string"
                             },
-                            "description": {
+                            "pid": {
+                                "type": "string"
+                            },
+                            "lid": {
+                                "type": "string"
+                            },
+                            "mode": {
+                                "type": "string"
+                            },
+                            "on": {
+                                "type": "string"
+                            },
+                            "output_format": {
+                                "type": "string"
+                            },
+                            "tx_addr": {
+                                "type": "string"
+                            },
+                            "tx_port": {
+                                "type": "string"
+                            },
+                            "recv_port": {
+                                "type": "string"
+                            },
+                            "out_ip": {
+                                "type": "string"
+                            },
+                            "out_mask": {
                                 "type": "string"
                             }
                         }
                     }
                 },
-                "update": {
+                "SET_OUTPUT_INTERFACE": {
                     "params": {
-                        "id": {
-                            "type": "number",
-                            "minLength": 1
-                        },
-                        "date": "date",
-                        "sn": "string",
-                        "description": "string",
-                        "license": "array"
+                        "TO_REPLACE": "boolean"
                     },
-                    "required": [
-                        "id"
-                    ],
-                    "access": "superadmin aggregators.admin",
                     "jsonschema": {
                         "type": "object",
                         "properties": {
-                            "id": {
-                                "type": "number",
-                                "minLength": 1
-                            },
-                            "date": {
-                                "type": "string"
-                            },
-                            "sn": {
-                                "type": "string"
-                            },
-                            "description": {
-                                "type": "string"
-                            },
-                            "license": {
-                                "type": "array"
+                            "TO_REPLACE": {
+                                "type": "boolean"
                             }
-                        },
-                        "required": [
-                            "id"
-                        ]
-                    }
-                },
-                "remove": {
-                    "params": {
-                        "id": {
-                            "type": "number",
-                            "minLength": 1
                         }
-                    },
-                    "required": [
-                        "id"
-                    ],
-                    "access": "superadmin aggregators.admin",
-                    "jsonschema": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "number",
-                                "minLength": 1
-                            }
-                        },
-                        "required": [
-                            "id"
-                        ]
                     }
                 },
-                "licenseadd": {
+                "CLEAR_CONFIG": {
                     "params": {
-                        "id": {
-                            "type": "number",
-                            "minLength": 1
-                        },
-                        "ports": {
-                            "type": "number",
-                            "minimum": 1,
-                            "maximum": 64
-                        },
-                        "mpls": "boolean",
-                        "mirror": "boolean"
+                        "TO_REMOVE": "boolean"
                     },
-                    "required": [
-                        "id"
-                    ],
-                    "access": "superadmin aggregators.admin",
                     "jsonschema": {
                         "type": "object",
                         "properties": {
-                            "id": {
-                                "type": "number",
-                                "minLength": 1
-                            },
-                            "ports": {
-                                "type": "number",
-                                "minimum": 1,
-                                "maximum": 64
-                            },
-                            "mpls": {
-                                "type": "boolean"
-                            },
-                            "mirror": {
+                            "TO_REMOVE": {
                                 "type": "boolean"
                             }
-                        },
-                        "required": [
-                            "id"
-                        ]
+                        }
+                    }
+                },
+                "CREATE_CHANNEL": {
+                    "params": {
+                        "TO_REMOVE": "boolean"
+                    },
+                    "jsonschema": {
+                        "type": "object",
+                        "properties": {
+                            "TO_REMOVE": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                },
+                "DELETE_CHANNEL": {
+                    "params": {
+                        "TO_REMOVE": "boolean"
+                    },
+                    "jsonschema": {
+                        "type": "object",
+                        "properties": {
+                            "TO_REMOVE": {
+                                "type": "boolean"
+                            }
+                        }
                     }
                 }
             }

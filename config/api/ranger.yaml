@@ -1,69 +1,69 @@
-description: Aggregators
+description: Ranger API
 
-roles:
-  read:
-    superadmin
-    aggregators.admin    
-    aggregators.user
-  write:
-    superadmin
-    aggregators.admin
+Channel:
+  id: string
+  pid: string
+  lid: string
+  mode: string
+  on: string
+  output_format: string
+  tx_addr: string
+  tx_port: string
+  recv_port: string
+  out_ip: string
+  out_mask: string
 
-model:
-  id:
-    type: number
-    minLength: 1   
-  date: date
-  sn: string
-  description: string
-  license: array
+ChannelStats:
+  sync: string
+  recv_frames: string
+  recv_bytes: string
+  outp_packets: string
+  outp_bytes: string
+  proto_errors: string
+  outp_errors: string
+  sync_errors: string
 
-license:
-  id:
-    type: number
-    minLength: 1  
-  ports:
-    type: number
-    minimum: 1
-    maximum: 64    
-  mpls: boolean
-  mirror: boolean
+NetworkInterface:
+  ip: string
+  mac: string
+  mask: string
+  name: string
+  link: string
+  up: string
 
 methods:
   GetNetworkInterfaces:
-    response:
-      ip: string
-      mac: string
-      mask: string
-      name: string
-      link: string
-      up: string
-      
-  add:
-    params: 
-      sn:
-        type: string
-        minLength: 1      
-      description: string
-    access: $ref roles/write
+    response: $ref NetworkInterface
 
-  update:
-    params: $ref model
-    required:
-      - id
-    access: $ref roles/write
-
-  remove:
+  GET_CONFIG:
     params:
-      id:
-        type: number
-        minLength: 1  
-    required:
-      - id
-    access: $ref roles/write
+    response: $ref Channel
 
-  licenseadd:
-    params: $ref license
-    required:
-      - id    
-    access: $ref roles/write
+  GET_STATS:
+    params:
+    response: $ref ChannelStats
+  
+  RESET_STATS:
+    params:
+      
+  MODIFY_CHANNEL:
+    params: $ref Channel
+
+  SET_OUTPUT_INTERFACE:
+    params:
+      TO_REPLACE: boolean     
+
+  CLEAR_CONFIG:
+    params:
+      TO_REMOVE: boolean
+  
+  CREATE_CHANNEL:
+    params:
+      TO_REMOVE: boolean    
+  
+  DELETE_CHANNEL:
+    params:
+      TO_REMOVE: boolean  
+      
+
+  

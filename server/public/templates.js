@@ -38,8 +38,6 @@ module.run(['$templateCache', function($templateCache) {
     '<script src="lib/ngstorage/ngStorage.min.js"></script>\n' +
     '<script src="lib/angular-route/angular-route.min.js"></script>\n' +
     '<script src="lib/angular-animate/angular-animate.min.js"></script>\n' +
-    '<script src="lib/ng-file-upload/ng-file-upload.min.js"></script>\n' +
-    '<script src="lib/ngDraggable/ngDraggable.js"></script>\n' +
     '  \n' +
     '<script src="config.js">;</script>\n' +
     '<script src="templates.js">;</script>\n' +

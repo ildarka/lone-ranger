@@ -1,4 +1,4 @@
-var app = angular.module("app",['ngRoute', 'ngAnimate', 'ngStorage', 'templates', 'ngFileUpload', 'ngDraggable']);
+var app = angular.module("app",['ngRoute', 'ngAnimate', 'ngStorage', 'templates']);
 
 app.controller("appCtrl", function($rootScope, $window, $location, $filter, $http, $timeout, $localStorage, api) {
 
