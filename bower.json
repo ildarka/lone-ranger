@@ -14,9 +14,7 @@
     "angular-animate": "~1.4.6",
     "angular-route": "~1.4.6",
     "angularjs": "~1.4.5",
-    "ng-file-upload": "~9.0.6",
     "ngstorage": "~0.3.9",
-    "sega2": "~0.1.0",
-    "ngDraggable": "~0.1.8"
+    "sega2": "~0.1.0"
   }
 }
